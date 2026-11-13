@@ -1,0 +1,13 @@
+category,player_group,source,construction,form,evaluation_population,seasons_available,pool_rows_2021_2026,share_with_any_T_record,share_meeting_rate_floor,derived_by_formula_from_other_metrics
+R,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),runs,production,count,2015-2026,2238,0.915,,no
+HR,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),homeRuns,production,count,2015-2026,2238,0.915,,no
+RBI,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),rbi,production,count,2015-2026,2238,0.915,,no
+SB,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),stolenBases,production,count,2015-2026,2238,0.915,,no
+AVG,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),hits / atBats (aggregated from components),rate,AB>=100 in T; weight AB,2015-2026,2238,0.915,0.791,no
+AB,hitter,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),atBats,production (playing time; Level 3 input),count,2015-2026,2238,0.915,,no
+W,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),wins,production,count,2015-2026,2520,0.88,,no
+SV,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),saves,production,count,2015-2026,2520,0.88,,no
+K,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),strikeOuts,production,count,2015-2026,2520,0.88,,no
+ERA,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),9*earnedRuns / (outs/3),rate,IP>=20 in T; weight IP,2015-2026,2520,0.88,0.737,no
+WHIP,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),(baseOnBalls+hits) / (outs/3),rate,IP>=20 in T; weight IP,2015-2026,2520,0.88,0.737,no
+IP,pitcher,MLB Stats API season totals (data/raw/mlb_*; 2026 from holdout2026/raw_2026),outs/3,production (playing time; Level 3 input),count,2015-2026,2520,0.88,,no

@@ -1,0 +1,19 @@
+player_group,outcome_season,pool_size,share_any_T_appearance,share_zero_counting_outcome,share_meeting_canonical_t+1_rule,share_meeting_rate_floor,status
+hitter,2018,391,0.908,0.092,0.783,0.813,training only
+hitter,2019,392,0.921,0.079,0.77,0.809,training only
+hitter,2020,411,0.888,0.112,0.457,0.599,training only
+hitter,2021,203,0.985,0.015,0.931,0.961,primary
+hitter,2022,411,0.922,0.078,0.764,0.8,primary
+hitter,2023,417,0.911,0.089,0.741,0.789,primary
+hitter,2024,404,0.916,0.084,0.78,0.807,primary
+hitter,2025,410,0.924,0.076,0.744,0.798,primary
+hitter,2026,393,0.921,0.079,,0.817,exploratory
+pitcher,2018,410,0.868,0.132,0.666,0.768,training only
+pitcher,2019,427,0.888,0.112,0.649,0.78,training only
+pitcher,2020,407,0.843,0.157,0.641,0.494,training only
+pitcher,2021,457,0.91,0.09,0.628,0.744,primary
+pitcher,2022,421,0.86,0.14,0.641,0.746,primary
+pitcher,2023,413,0.884,0.116,0.634,0.753,primary
+pitcher,2024,417,0.863,0.137,0.638,0.741,primary
+pitcher,2025,407,0.88,0.12,0.597,0.72,primary
+pitcher,2026,405,0.886,0.114,,0.753,exploratory

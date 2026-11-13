@@ -1,0 +1,43 @@
+group,target,outcome,delta_pct,ci_low_pct,ci_high_pct,p_adjusted,adjustment,family,verdict,n_rows
+hitter,woba,R,-0.4349923430112742,-1.25255602329914,0.3507500419472613,0.4417791104447776,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,br,R,-0.426297641328073,-0.7900814903933407,-0.0665112729267347,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,1845
+hitter,fld,R,-0.7000828183420603,-1.2275076507542269,-0.1496721094435379,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,1666
+hitter,hwar,R,-0.7064374046643253,-1.353611921049809,-0.0353886202666045,0.1204852119394848,BH within secondary_single,secondary_single,gain not robust to multiplicity,1845
+hitter,woba,HR,-1.0209057410274351,-2.1573160970565923,0.0315898029923264,0.3098450774612694,Holm (8 primary),primary,no detectable gain,1845
+hitter,br,HR,0.0182722545120695,-0.0562463689410118,0.0858928535714793,0.6971997872031725,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,fld,HR,-0.198987562708424,-0.4733100079458736,0.0717690513965071,0.2879612825166364,BH within secondary_single,secondary_single,no detectable gain,1666
+hitter,hwar,HR,-0.1532666520182009,-0.544810910127175,0.2769638171387913,0.5542745868445088,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,woba,RBI,-0.7148473235572621,-1.5416684696664915,0.0706095556970061,0.1908276630915311,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,br,RBI,0.0012131648651111,-0.0654946769140727,0.0719495913859428,0.9685157421289354,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,fld,RBI,-0.2613947657557918,-0.6011142320535051,0.0876462141506741,0.2879612825166364,BH within secondary_single,secondary_single,no detectable gain,1666
+hitter,hwar,RBI,-0.5734090998886289,-1.0228642885279982,-0.0960585704808976,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,1845
+hitter,woba,SB,0.0831396194198718,-0.1292114139555617,0.3086404239827561,0.5542745868445088,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,br,SB,-0.301688581908025,-0.7509933097792957,0.1863243208950116,0.6996501749125438,Holm (8 primary),primary,no detectable gain,1845
+hitter,fld,SB,-0.0096487961296634,-0.3487790942680381,0.3231325972822564,0.9607923311071735,BH within secondary_single,secondary_single,no detectable gain,1666
+hitter,hwar,SB,-0.6195564558490203,-1.0815965468579136,-0.1453716808091718,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,1845
+hitter,woba,AVG,-0.7258789261999439,-1.894871747733175,0.3880395682440716,0.6996501749125438,Holm (8 primary),primary,no detectable gain,1506
+hitter,br,AVG,-0.3099666481990605,-0.8311576289441968,0.1991693242045271,0.4162918540729635,BH within secondary_single,secondary_single,no detectable gain,1506
+hitter,fld,AVG,0.0408433915185499,-0.0682990673047634,0.1490645553418829,0.5542745868445088,BH within secondary_single,secondary_single,no detectable gain,1353
+hitter,hwar,AVG,-0.2161970399852295,-0.4859445672866643,0.0615239253013321,0.2676161919040479,BH within secondary_single,secondary_single,no detectable gain,1506
+hitter,woba,AB,-0.4153120183808866,-0.9207454961197968,0.0708524562620746,0.2310844577711144,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,br,AB,-0.0347631642568187,-0.0991891365662226,0.0264247969433549,0.4207420099474072,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,fld,AB,-0.2578531357049072,-0.7757671570987406,0.3000730748970245,0.5070264867566217,BH within secondary_single,secondary_single,no detectable gain,1666
+hitter,hwar,AB,-1.5162596838066236,-2.1863354775150654,-0.8389034223226549,0.011327669498584,BH within secondary_single,secondary_single,adds information,1845
+hitter,woba,VAL_H,-0.7233246461356061,-1.582593382051799,0.0778721857486977,0.2038980509745127,BH within secondary_single,secondary_single,no detectable gain,1845
+hitter,br,VAL_H,-0.3126795874051616,-0.5802495310373106,-0.0268728194197988,0.1204852119394848,BH within secondary_single,secondary_single,gain not robust to multiplicity,1845
+hitter,fld,VAL_H,-0.2639897124048357,-0.6572862097621417,0.149037113095908,0.6996501749125438,Holm (8 primary),primary,no detectable gain,1666
+hitter,hwar,VAL_H,-0.4642750475228259,-0.9107141217391448,-0.0061690591122337,0.2698650674662669,Holm (8 primary),primary,gain not robust to multiplicity,1845
+pitcher,fip,W,-0.7369246775664328,-1.3933342291020503,-0.1117553971439148,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,2115
+pitcher,pwar,W,-0.2110899101753085,-0.6727621678932378,0.2332648204501332,0.5070264867566217,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,fip,SV,0.0889514114642705,-0.0356621255066473,0.2311171384500497,0.2879612825166364,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,pwar,SV,-0.1112915510023408,-0.2230628306083138,-0.013955822701344,0.0906213559886723,BH within secondary_single,secondary_single,gain not robust to multiplicity,2115
+pitcher,fip,K,-0.1901447184969351,-1.107275229676844,0.7200725309299888,0.7253248375812094,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,pwar,K,-0.1700521925815289,-0.5921892401952086,0.2223237368772205,0.5450351747203321,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,fip,ERA,-1.1684917169614215,-1.7669112377332372,-0.5937942803645438,0.0079960019990005,Holm (8 primary),primary,adds information,1567
+pitcher,pwar,ERA,-0.1818234221727724,-0.3606875508092565,0.0034688361616601,0.1670831251041146,BH within secondary_single,secondary_single,no detectable gain,1567
+pitcher,fip,WHIP,-1.298356218257387,-2.022423022209974,-0.5727418771248685,0.0079960019990005,Holm (8 primary),primary,adds information,1567
+pitcher,pwar,WHIP,-0.3668360029067815,-0.5967301389766637,-0.1400926112754313,0.011327669498584,BH within secondary_single,secondary_single,adds information,1567
+pitcher,fip,IP,-0.1221295598860617,-0.6715254430858542,0.4044393921070567,0.6971997872031725,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,pwar,IP,0.220131665060692,-0.2390460273203482,0.6943138507335611,0.5070264867566217,BH within secondary_single,secondary_single,no detectable gain,2115
+pitcher,fip,VAL_P,-1.7722845779862018,-2.576300755010803,-0.9277698086577082,0.011327669498584,BH within secondary_single,secondary_single,adds information,2115
+pitcher,pwar,VAL_P,-0.2719203973088172,-0.6896125226565628,0.1249666817533914,0.6996501749125438,Holm (8 primary),primary,no detectable gain,2115

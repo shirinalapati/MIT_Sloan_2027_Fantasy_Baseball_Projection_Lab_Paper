@@ -1,0 +1,43 @@
+target,target_label,fantasy_outcome,family,hypothesized_link
+woba,wOBA,R,secondary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,HR,primary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,RBI,secondary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,SB,secondary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,AVG,primary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,PTS_H,secondary,"offensive rate skill -> AVG, HR, R, RBI, points"
+woba,wOBA,VAL_H,secondary,"offensive rate skill -> AVG, HR, R, RBI, points"
+br,baserunning run-value rate,R,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,HR,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,RBI,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,SB,primary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,AVG,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,PTS_H,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+br,baserunning run-value rate,VAL_H,secondary,running value -> SB (not identical: SB volume depends on attempts/opportunity)
+fld,fielding run-value rate,R,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,HR,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,RBI,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,SB,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,AVG,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,PTS_H,secondary,boundary case: defense is not scored; any link would run through playing time
+fld,fielding run-value rate,VAL_H,primary,boundary case: defense is not scored; any link would run through playing time
+hwar,hitter bWAR/600 PA,R,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,HR,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,RBI,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,SB,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,AVG,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,PTS_H,secondary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+hwar,hitter bWAR/600 PA,VAL_H,primary,"broad hitter value -> roto/points value (WAR includes defense, position, replacement level)"
+fip,FIP,W,secondary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,SV,secondary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,K,secondary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,ERA,primary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,WHIP,primary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,PTS_P,secondary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+fip,FIP,VAL_P,secondary,"K/BB/HR skill -> ERA, WHIP, K (FIP excludes balls in play and sequencing)"
+pwar,pitcher bWAR/200 IP,W,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,SV,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,K,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,ERA,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,WHIP,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,PTS_P,secondary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)
+pwar,pitcher bWAR/200 IP,VAL_P,primary,broad pitcher value -> roto/points value (bWAR is runs-allowed based)

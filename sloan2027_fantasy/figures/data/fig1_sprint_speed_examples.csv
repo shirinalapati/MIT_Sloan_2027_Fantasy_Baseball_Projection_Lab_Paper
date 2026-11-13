@@ -1,0 +1,3 @@
+target,delta_rmse,delta_pct,folds_improved,n_folds,verdict,reliability_r
+Baserunning rate,-0.05986710595185528,-4.284966660303675,7,7,Projection,0.915869637541495
+wOBA,2.7528391065277263e-05,0.0777378337039132,3,7,Diagnostic,0.915869637541495

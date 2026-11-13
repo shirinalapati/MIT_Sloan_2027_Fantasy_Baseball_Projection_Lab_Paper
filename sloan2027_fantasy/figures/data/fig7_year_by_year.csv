@@ -1,0 +1,73 @@
+target,season,series,delta_pct,ci_low_pct,ci_high_pct
+hitting_woba,2021,selected vs baseline,-5.72457814470454,,
+hitting_woba,2021,all-feature ridge vs selected,10.553654162093482,,
+hitting_woba,2022,selected vs baseline,-0.5478818354397481,,
+hitting_woba,2022,all-feature ridge vs selected,5.309692012569983,,
+hitting_woba,2023,selected vs baseline,-5.542091309852915,,
+hitting_woba,2023,all-feature ridge vs selected,2.8997865320572696,,
+hitting_woba,2024,selected vs baseline,-2.3424649624748577,,
+hitting_woba,2024,all-feature ridge vs selected,2.326573172675313,,
+hitting_woba,2025,selected vs baseline,-1.4793779647579661,,
+hitting_woba,2025,all-feature ridge vs selected,-4.0063248547125445,,
+hitting_woba,2026,selected vs baseline,-2.1419667151956463,-5.336045288826142,1.0180442269140504
+hitting_woba,2026,all-feature ridge vs selected,-1.1060005939718929,-4.1241372940628676,1.9718399587253728
+pitching_fip,2021,selected vs baseline,-14.02056376006869,,
+pitching_fip,2021,all-feature ridge vs selected,2.275986361823135,,
+pitching_fip,2022,selected vs baseline,-11.254658414483695,,
+pitching_fip,2022,all-feature ridge vs selected,12.773149373125971,,
+pitching_fip,2023,selected vs baseline,-0.9341417462197835,,
+pitching_fip,2023,all-feature ridge vs selected,6.79881691261567,,
+pitching_fip,2024,selected vs baseline,-9.254273555903444,,
+pitching_fip,2024,all-feature ridge vs selected,2.671332278174921,,
+pitching_fip,2025,selected vs baseline,-3.1947430344744125,,
+pitching_fip,2025,all-feature ridge vs selected,-4.799881287713525,,
+pitching_fip,2026,selected vs baseline,-2.141731179562848,-5.638510983532965,1.6894190080924258
+pitching_fip,2026,all-feature ridge vs selected,-3.784539185000914,-7.256395722653085,-0.10451335174368885
+baserunning_rv,2021,selected vs baseline,-8.66961832994553,,
+baserunning_rv,2021,all-feature ridge vs selected,1.9165515622423983,,
+baserunning_rv,2022,selected vs baseline,-6.068654586620641,,
+baserunning_rv,2022,all-feature ridge vs selected,-0.42244787140101886,,
+baserunning_rv,2023,selected vs baseline,-5.371071836069696,,
+baserunning_rv,2023,all-feature ridge vs selected,0.8124555941198499,,
+baserunning_rv,2024,selected vs baseline,-4.038117590645726,,
+baserunning_rv,2024,all-feature ridge vs selected,-1.2364760856847998,,
+baserunning_rv,2025,selected vs baseline,-7.498870706294759,,
+baserunning_rv,2025,all-feature ridge vs selected,-0.29693617358707913,,
+baserunning_rv,2026,selected vs baseline,-2.8933091243706444,-7.431495386242832,1.7965608827786332
+baserunning_rv,2026,all-feature ridge vs selected,-0.6460087560698248,-2.0644350376404357,0.7055113854449827
+defense_rv,2021,selected vs baseline,0.0,,
+defense_rv,2021,all-feature ridge vs selected,-0.138237312415739,,
+defense_rv,2022,selected vs baseline,-1.7524296538214554,,
+defense_rv,2022,all-feature ridge vs selected,0.2348724416776002,,
+defense_rv,2023,selected vs baseline,-0.5169728596914274,,
+defense_rv,2023,all-feature ridge vs selected,-0.2906515559937717,,
+defense_rv,2024,selected vs baseline,-0.23520763186816235,,
+defense_rv,2024,all-feature ridge vs selected,-0.965971991718546,,
+defense_rv,2025,selected vs baseline,-1.534940077607434,,
+defense_rv,2025,all-feature ridge vs selected,-0.8952842629930038,,
+defense_rv,2026,selected vs baseline,0.1748857981574603,-1.0507610548697714,1.4572276041014462
+defense_rv,2026,all-feature ridge vs selected,-0.9438151490451688,-2.9918952033113704,0.9963200099742174
+overall_war,2021,selected vs baseline,0.0,,
+overall_war,2021,all-feature ridge vs selected,3.96005672735088,,
+overall_war,2022,selected vs baseline,0.010784983545047694,,
+overall_war,2022,all-feature ridge vs selected,-1.901358213464362,,
+overall_war,2023,selected vs baseline,0.0,,
+overall_war,2023,all-feature ridge vs selected,-3.376167117179851,,
+overall_war,2024,selected vs baseline,-0.8266768322476422,,
+overall_war,2024,all-feature ridge vs selected,-2.6991290307713274,,
+overall_war,2025,selected vs baseline,-0.36140898760947454,,
+overall_war,2025,all-feature ridge vs selected,-2.378399644473653,,
+overall_war,2026,selected vs baseline,0.7205869041802577,-0.4944925113888836,1.8192645892937198
+overall_war,2026,all-feature ridge vs selected,-0.95720921838992,-3.496113367010926,1.64354540802307
+pitcher_war,2021,selected vs baseline,-0.7758104093344632,,
+pitcher_war,2021,all-feature ridge vs selected,-3.436524498267198,,
+pitcher_war,2022,selected vs baseline,-1.7055339144288206,,
+pitcher_war,2022,all-feature ridge vs selected,-0.06959074348701465,,
+pitcher_war,2023,selected vs baseline,-2.226309606806979,,
+pitcher_war,2023,all-feature ridge vs selected,-0.7581916830835806,,
+pitcher_war,2024,selected vs baseline,-1.184757834742367,,
+pitcher_war,2024,all-feature ridge vs selected,-0.1316828749163856,,
+pitcher_war,2025,selected vs baseline,-2.258169718846252,,
+pitcher_war,2025,all-feature ridge vs selected,-0.12461939714685985,,
+pitcher_war,2026,selected vs baseline,-1.7127760431764565,-3.1397156781981774,-0.26223067861450944
+pitcher_war,2026,all-feature ridge vs selected,-0.5933643714092127,-1.1217129540114077,-0.0551305919536025
