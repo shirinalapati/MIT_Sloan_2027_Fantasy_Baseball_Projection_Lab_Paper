@@ -1,0 +1,16 @@
+# Player-level and raw data are rights-restricted (MLBAM / Baseball-Reference terms). They are rebuilt locally, never committed.
+/local/
+*.parquet
+*.feather
+# Named (non-blind) manuscript copies stay on the author's machine
+sloan2027_fantasy/paper/*named*
+# Python / Node / build output
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+app/dist/
+app/test-results/
+app/playwright-report/
+.vercel/
+.DS_Store

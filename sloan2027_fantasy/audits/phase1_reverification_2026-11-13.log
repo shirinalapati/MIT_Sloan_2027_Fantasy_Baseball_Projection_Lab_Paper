@@ -1,0 +1,45 @@
+== start 2026-11-13T23:06:21Z commit 04fddeb063bfb84d3613ac7cb178e122400466d3
+== pytest
+  /Users/Shirin/Future_Predictor/.worktrees/sloan-2027/sloan2027/tests/test_temporal_leakage.py:88: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+71 passed, 1 warning in 18.45s
+== p0_reproduce
+  family pitcher role...
+  family pitcher environment...
+pitcher_war {'rows': 10, 'seconds': 9.5}
+real 161.05
+user 154.28
+sys 5.00
+== p0_diff
+47           overall_war: selective feature count         None                  5           5  match
+48                    pitcher_war: selective RMSE      5.17718           5.177181    5.177181  match
+49                 pitcher_war: kitchen-sink RMSE      5.17374           5.173743    5.173743  match
+50  pitcher_war: bootstrap kitchen-minus-selec...         None          -0.004308   -0.004308  match
+51           pitcher_war: selective feature count         None                  6           6  match
+52                                registry fields          402                402         402  match
+53                     feature-target evaluations          208                208         208  match
+54                                unique features          163                163         163  match
+== kitchen population
+            study  selective_features  kitchen_features  selective_test_rows_total  kitchen_test_rows_total  rows_dropped_by_selective_complete_case  pct_dropped  selective_includes_hardcoded_list  bootstrap_rows_common
+0    hitting_woba                   7                56                       1922                     1922                                        0          0.0                               True                   1922
+1    pitching_fip                  15                63                       1699                     1866                                      167          8.9                              False                   1699
+2  baserunning_rv                   9                23                       1921                     1922                                        1          0.1                              False                   1921
+3      defense_rv                   7                23                       2106                     2106                                        0          0.0                              False                   2106
+4     overall_war                   5                12                       1922                     1922                                        0          0.0                              False                   1922
+5     pitcher_war                   6                 9                       4027                     4027                                        0          0.0                              False                   4027
+== e3_audit
+   pitcher_war                duplicate (mlbam_id, season) in seasons/labeled/sample                                                                                      0/0/0  True
+   pitcher_war                   sample seasons within 2015-2024 (targets 2016-2025)                                                                                  2015-2024  True
+   pitcher_war                       park_factor present / external file season span                                                             1.000 coverage; file 2008-2026  True
+  pitching_fip                                          Stuff+ series used in panels                                                                        ['(column absent)']  True
+  pitching_fip                       Stuff+ coverage by season (all pitcher-seasons) {"2015": 1.0, "2016": 1.0, "2017": 1.0, "2018": 1.0, "2019": 1.0, "2020": 1.0, "2021": ...  True
+  pitching_fip                                                Stuff+ method recorded                                                              expanding_window_seasons_le_t  True
+  pitching_fip                                         2020 rows meet 25/10 IP floor                                                                                   287 rows  True
+           all 'lag1' = previous OBSERVED season (gap>1 share among rows with a lag)                                                            563/6459 rows (6.1%) have a gap  True
+== git status after
+ M sloan2027/results/nested/admission/pitcher_war_T2023_leaktest_a_meta.json
+ M sloan2027/results/nested/admission/pitcher_war_T2023_leaktest_b_meta.json
+ M sloan2027/results/p0_repro/run_log.json
+== end 2026-11-13T23:09:24Z
