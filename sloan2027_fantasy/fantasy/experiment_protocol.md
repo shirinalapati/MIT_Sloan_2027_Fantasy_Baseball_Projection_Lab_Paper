@@ -165,4 +165,23 @@ For each T, report:
 - **Level 4 (2027 forecasts).** It needs 2026 Statcast feature panels, which were not built. Only 2026 outcome tables were fetched. It is skipped and stated as such.
 
 ## Amendments
-(none yet)
+### Amendment 1 — 2026-11-13, written before the generalization run (FB-G)
+This amendment adds a new-target generalization check, answering referee concern M5. The earlier alternative-target runs (E9) reused feature sets selected for the original targets; they did not test whether the procedure can select features for a new target. FB-G does.
+
+- **New target:** next-season **ERA**, a standard 5×5 category.
+  - Population and weights: the FIP study's canonical pitcher sample (`pitcher_sample_role_ip`: IP thresholds in t and t+1), weight IP.
+  - History baseline B0: age, IP, starter role, two-year IP-weighted ERA (`era_w2`, computed from MLB Stats API ER and outs; current season if no prior), park factor.
+  - Candidates: the unchanged canonical pitcher catalog.
+- **Procedure.** The canonical admission code, nested exactly as in E1:
+  - for each outer year T = 2021–2025, admission on rows with feature season ≤ T−2;
+  - inner test years 2018 … T−1;
+  - canonical gates; ridge α = 1.
+- **Comparisons** on identical outer rows (paired player-cluster bootstrap, B = 2,000):
+  1. ERA-ADM versus B0;
+  2. TRANSFER (B0 + the FIP study's window-T selected set) versus B0;
+  3. ERA-ADM versus TRANSFER;
+  4. KS (B0 + every skill candidate) versus ERA-ADM.
+- **Pre-stated readings.**
+  - If ERA-ADM ≤ TRANSFER, target-specific selection is not shown to add value beyond reusing a related target's selections.
+  - If ERA-ADM beats B0 but not KS, admission is not shown to beat a broad model for ERA.
+- **No 2026 evaluation for ERA.** ERA forecasts were not frozen before the 2026 data were fetched.
