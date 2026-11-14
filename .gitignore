@@ -14,3 +14,6 @@ app/test-results/
 app/playwright-report/
 .vercel/
 .DS_Store
+
+# Full-size screenshots stay local; compressed copies are committed
+app/screenshots/*.png

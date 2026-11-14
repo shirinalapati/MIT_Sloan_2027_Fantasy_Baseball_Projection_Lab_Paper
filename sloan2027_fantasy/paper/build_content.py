@@ -191,7 +191,9 @@ def build(blind: bool) -> Builder:
     b.equation("rmse")
     b.para(
         f"The **incremental effect** of candidate metric j is the average change in RMSE when j is added to the baseline, across K expanding chronological folds {c('tashman', 'bergmeir')}. "
-        "Each fold trains on all seasons before its test season. The canonical study uses seven folds with outcome seasons 2019–2025; negative values mean the metric helped:")
+        "Each fold trains on all seasons before its test season. The canonical study uses seven folds with outcome seasons 2019–2025 (four for arm angle, which begins in 2020); negative values mean the metric helped. "
+        "The canonical point estimate averages the fold-level changes, while its interval is a pooled bootstrap of paired errors; the two estimate slightly different quantities, "
+        "and for 7 of the 208 evaluations the fold average falls just outside its interval. The nested, 2026 and fantasy analyses compute the point estimate and interval from the same pooled statistic:")
     b.equation("delta")
     b.para("A metric is a candidate for **Projection** only if the improvement is material (at least 0.5% of the baseline RMSE), measured over at least three folds, and "
            "either consistent (improving in at least 60% of folds, π) or clearly negative (upper 95% bootstrap bound u below zero):")
@@ -206,7 +208,7 @@ def build(blind: bool) -> Builder:
         ["Diagnostic", "Fails the projection test (or is redundant with a kept family member) **and** the catalog flags it as an interpretable process measure", "Statistical test, then a human flag", f"{D.VERDICTS['Diagnostic']}"],
         ["Exclude", "Fails the projection test and carries no process flag; means \"no conditional value for this target given this baseline\", not \"useless\"", "Statistical test, then a human flag", f"{D.VERDICTS['Exclude']}"],
         ["Context", "Park, environment, age or playing-time inputs, whatever their lift", "Human-specified role", f"{D.VERDICTS['Context']}"],
-        ["Augmented Projection / Insufficient Evidence", "Predictive only where observed / too few folds and too sparse coverage", "Statistical", "0 (every evaluation had 7 folds)"],
+        ["Augmented Projection / Insufficient Evidence", "Predictive only where observed / too few folds and too sparse coverage", "Statistical", "0 (207 of 208 evaluations had 7 folds; arm angle, available from 2020, had 4)"],
     ], columns=["Label", "Rule", "Basis", "Count (of 208)"])
     b.table(t3, "Admission labels, how each is decided, and whether a human choice is involved (decision rule `decide_verdict` in the study code; canonical counts).",
             widths=[1.2, 3.0, 1.35, 0.95], font=15)
@@ -218,7 +220,7 @@ def build(blind: bool) -> Builder:
     b.h2("5.3 Four different things called \"unstable\"")
     t4 = pd.DataFrame([
         ["Feature reliability", "Year-to-year Pearson r of the metric itself (same player, t and t+1)", "Reported; listed in Diagnostic reasons; never gates", f"Sprint speed: r = {num(sprint_w.reliability_r, '.2f', S['fig1'], '5.3')}, yet no wOBA value"],
-        ["Lift consistency", "Share of the 7 folds in which adding the metric lowered RMSE", "Gates: ≥60% (or CI below zero)", f"Sprint speed → baserunning: {int(sprint.folds_improved)} of {int(sprint.n_folds)} folds"],
+        ["Lift consistency", "Share of the out-of-time folds (7 for 207 of 208 evaluations) in which adding the metric lowered RMSE", "Gates: ≥60% (or CI below zero)", f"Sprint speed → baserunning: {int(sprint.folds_improved)} of {int(sprint.n_folds)} folds"],
         ["Coefficient drift", "Number of sign changes of the metric's coefficient across folds", "Gates: fewer than 2", "—"],
         ["Uncertainty", "Width of the 95% bootstrap interval of the RMSE change", "Gates only via \"CI below zero\" alternative", "Stuff+ → FIP pooled interval nearly touches zero"],
     ], columns=["Meaning", "How it is measured", "Role in the rule", "Example"])

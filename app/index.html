@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Fantasy Projection Lab: which public baseball metrics improve next-season forecasts, and does that reach your fantasy categories? Companion to Paper ID 18, MIT Sloan Sports Analytics Conference 2027."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Fantasy Projection Lab</title>
+    <script>
+      // Apply a stored manual theme before first paint (no flash). Storage may be unavailable.
+      (function () {
+        try {
+          var t = window.localStorage.getItem('fpl-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This site needs JavaScript to display the research results.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
