@@ -379,6 +379,56 @@ VAL_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_join
 VAL_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2023,417,2.8400047184595114,2.8323689153422706,-0.007635803117240769,-0.26886586024345116
 VAL_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2024,404,2.875247452513038,2.8464761459287606,-0.0287713065842774,-1.0006549717705362
 VAL_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2025,410,2.793679004403723,2.7923231464151486,-0.001355857988574627,-0.048533062905128516
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2021-2025 pooled (primary),2021,203,358.24128702624745,358.2690709952774,0.02778396902994018,0.007755657998153775
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2021-2025 pooled (primary),2022,411,287.3115523125606,281.59907193616164,-5.712480376398958,-1.9882529367230115
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2021-2025 pooled (primary),2023,417,310.17457560879757,304.63003172547826,-5.544543883319307,-1.787555886047949
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2021-2025 pooled (primary),2024,404,307.5669794595308,307.4852668684309,-0.0817125910998584,-0.026567413460133818
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2021-2025 pooled (primary),2025,410,314.76917318031246,311.53364120592164,-3.235531974390824,-1.0279062405318138
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2021,203,360.05900828704176,358.2690709952774,-1.7899372917643745,-0.49712331883595673
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2022,411,287.1609049292252,281.59907193616164,-5.561832993063547,-1.9368350278859645
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2023,417,307.6339869625489,304.63003172547826,-3.0039552370706133,-0.9764705345889862
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2024,404,308.167889517759,307.4852668684309,-0.6826226493280956,-0.2215099861300629
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2025,410,315.06509096557784,311.53364120592164,-3.531449759656198,-1.1208635488093548
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2021-2025 pooled (primary),2021,203,358.24128702624745,357.94338493187985,-0.2979020943676005,-0.0831568289742589
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2021-2025 pooled (primary),2022,411,287.3115523125606,287.539505343347,0.22795303078640927,0.07934001572565508
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2021-2025 pooled (primary),2023,417,310.17457560879757,309.73025825778336,-0.444317351014206,-0.14324750832402
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2021-2025 pooled (primary),2024,404,307.5669794595308,306.8607196875455,-0.7062597719852874,-0.22962795720995663
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2021-2025 pooled (primary),2025,410,314.76917318031246,314.17811234201844,-0.5910608382940268,-0.18777596049897916
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2021,203,358.33931851517525,357.94338493187985,-0.3959335832954025,-0.11049124749581037
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2022,411,287.50108779981866,287.539505343347,0.03841754352833959,0.013362573276623208
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2023,417,309.8678380075926,309.73025825778336,-0.13757974980921972,-0.04439949324648809
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2024,404,307.11209461817793,306.8607196875455,-0.2513749306324371,-0.08185119864620215
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2025,410,314.5983381290113,314.17811234201844,-0.42022578699288715,-0.13357533593218152
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2021-2025 pooled (primary),2021,177,351.94376523094337,345.1157151204548,-6.828050110488562,-1.940096908950223
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2021-2025 pooled (primary),2022,375,285.4650317653505,283.8631097193695,-1.6019220459809844,-0.5611622677826785
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2021-2025 pooled (primary),2023,378,303.1786354285513,303.32773103142654,0.14909560287526347,0.04917747672573061
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2021-2025 pooled (primary),2024,367,304.6876496519926,303.2464566934065,-1.4411929585861003,-0.4730066874165062
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2021-2025 pooled (primary),2025,369,308.42393401096007,308.6079542516665,0.1840202407064453,0.05966470834909524
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2021,177,345.1157151204548,345.1157151204548,0.0,0.0
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2022,375,284.5772664915925,283.8631097193695,-0.7141567722230207,-0.2509535568415194
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2023,378,303.11925504083575,303.32773103142654,0.20847599059078448,0.06877688801481745
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2024,367,302.8573726434698,303.2464566934065,0.3890840499367414,0.12847105108937848
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2025,369,308.57643398913416,308.6079542516665,0.03152026253235363,0.010214734198873898
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2021-2025 pooled (primary),2021,203,358.24128702624745,354.29138242280624,-3.9499046034412117,-1.1025821831507132
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2021-2025 pooled (primary),2022,411,287.3115523125606,285.8383193633107,-1.4732329492499048,-0.5127649540688164
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2021-2025 pooled (primary),2023,417,310.17457560879757,306.2621825270726,-3.9123930817249857,-1.26135195769863
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2021-2025 pooled (primary),2024,404,307.5669794595308,306.5023627493272,-1.0646167102036088,-0.346141420016673
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2021-2025 pooled (primary),2025,410,314.76917318031246,310.05518610301317,-4.713987077299294,-1.4976012516317574
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2021,203,354.29138242280624,354.29138242280624,0.0,0.0
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2022,411,287.63775094781704,285.8383193633107,-1.799431584506351,-0.6255895057505169
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2023,417,306.2621825270726,306.2621825270726,0.0,0.0
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2024,404,307.337198125581,306.5023627493272,-0.8348353762538068,-0.2716349928825358
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2021-2025 pooled (primary),2025,410,311.9928141550541,310.05518610301317,-1.9376280520409068,-0.6210489357866893
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2021,203,358.24128702624745,354.5429327079465,-3.6983543183009715,-1.0323640664092417
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2022,411,287.3115523125606,281.714808252174,-5.596744060386584,-1.9479704228175259
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2023,417,310.17457560879757,301.4080437097343,-8.766531899063295,-2.8263218807849473
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2024,404,307.5669794595308,306.33662151430667,-1.2303579452241138,-0.40002927082294365
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2025,410,314.76917318031246,311.6794443402828,-3.089728840029636,-0.9815855881985353
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2021,203,354.562726938109,354.5429327079465,-0.01979423016251758,-0.005582716021352345
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2022,411,287.67010335936055,281.714808252174,-5.955295107186544,-2.0701821418498696
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2023,417,305.227560744956,301.4080437097343,-3.819517035221736,-1.2513670213461727
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2024,404,307.53889482693285,306.33662151430667,-1.2022733126261755,-0.3909337429669679
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2021-2025 pooled (primary),2025,410,312.4269243023428,311.6794443402828,-0.7474799620599697,-0.23924953450446415
 W,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2021,457,3.234890361314336,3.162380653758062,-0.07250970755627373,-2.2414888746588937
 W,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2022,421,3.0644301469577444,3.071490367059011,0.007060220101266612,0.23039259381636562
 W,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2023,413,3.2458979496048155,3.212545296672096,-0.03335265293271927,-1.027532394750116
@@ -619,6 +669,36 @@ VAL_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pi
 VAL_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2023,413,2.645986438032936,2.6168781894510236,-0.0291082485819123,-1.1000906188903896
 VAL_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2024,417,2.833000691856545,2.7978393066077842,-0.03516138524876089,-1.2411357805111811
 VAL_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2025,407,2.7546451862413757,2.7234800045829384,-0.03116518165843729,-1.1313682725491472
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2021,457,183.1697173230477,180.1540836961733,-3.015633626874404,-1.6463603651011127
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2022,421,173.4558834540465,171.08128578753877,-2.374597666507725,-1.3689922873886402
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2023,413,179.9545253688907,178.21132528405548,-1.7432000848352232,-0.9686892181576533
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2024,417,190.3352153364926,189.0623961570052,-1.2728191794874135,-0.6687250056366097
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2021-2025 pooled (primary),2025,407,179.40966784529877,177.67749812304876,-1.7321697222500063,-0.9654829324714097
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2021,457,182.03363984077075,180.1540836961733,-1.8795561445974442,-1.0325323089960392
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2022,421,172.35386208453474,171.08128578753877,-1.2725762969959646,-0.7383509029648558
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2023,413,180.45711471351612,178.21132528405548,-2.2457894294606433,-1.2445003529098513
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2024,417,190.25295499913477,189.0623961570052,-1.190558842129576,-0.625776793918912
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2025,407,178.72224126903834,177.67749812304876,-1.044743145989571,-0.5845624688741867
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2021-2025 pooled (primary),2021,457,183.1697173230477,183.99099643511212,0.821279112064417,0.4483705735135061
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2021-2025 pooled (primary),2022,421,173.4558834540465,172.498400758009,-0.9574826960374878,-0.552003585563676
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2021-2025 pooled (primary),2023,413,179.9545253688907,179.7508779880901,-0.20364738080058942,-0.11316602368466727
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2021-2025 pooled (primary),2024,417,190.3352153364926,189.70950939280584,-0.6257059436867678,-0.3287389265200271
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2021-2025 pooled (primary),2025,407,179.40966784529877,178.41241126359697,-0.9972565817018051,-0.5558544272885666
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2021,457,185.7503837221876,183.99099643511212,-1.7593872870754694,-0.9471782786230193
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2022,421,173.17770060227275,172.498400758009,-0.6792998442637384,-0.39225595553081466
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2023,413,179.84443485380993,179.7508779880901,-0.09355686571981892,-0.05202099569879293
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2024,417,190.4054842289335,189.70950939280584,-0.6959748361276468,-0.36552247375965463
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2021-2025 pooled (primary),2025,407,179.36482435037072,178.41241126359697,-0.9524130867737597,-0.5309921219075368
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2021,457,183.1697173230477,182.16793657114857,-1.0017807518991333,-0.5469139585624518
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2022,421,173.4558834540465,171.04066321883317,-2.415220235213326,-1.3924118266378596
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2023,413,179.9545253688907,178.1999528217957,-1.7545725470949947,-0.9750088493180584
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2024,417,190.3352153364926,189.00640020491062,-1.3288151315819903,-0.6981446545416123
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2025,407,179.40966784529877,177.54745059645344,-1.862217248845326,-1.0379692862767447
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2021,457,185.0180896432568,182.16793657114857,-2.8501530721082133,-1.5404726519464906
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2022,421,172.29622775142153,171.04066321883317,-1.2555645325883518,-0.7287243307495992
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2023,413,180.36654191380666,178.1999528217957,-2.166589092010952,-1.2012145207320761
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2024,417,190.2867051490614,189.00640020491062,-1.280304944150771,-0.6728294250235938
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2021-2025 pooled (primary),2025,407,178.7402343482877,177.54745059645344,-1.1927837518342415,-0.6673280675631319
 R,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2026 (exploratory),2026,393,22.551666617062835,22.31354681601325,-0.23811980104958508,-1.055885603015349
 R,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,393,22.472594443298004,22.31354681601325,-0.1590476272847532,-0.7077403887924739
 R,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2026 (exploratory),2026,393,22.551666617062835,22.524475547279067,-0.027191069783768285,-0.12057232951109355
@@ -695,6 +775,16 @@ VAL_H,target_forecast_added,hwar,BF,BF+hwar,primary,hitter,2026 (exploratory),20
 VAL_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,393,2.7922936174634825,2.793578799767722,0.0012851823042394628,0.04602604454637981
 VAL_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2026 (exploratory),2026,393,2.7891789234558955,2.7577244281325624,-0.03145449532333311,-1.12773314966685
 VAL_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2026 (exploratory),2026,393,2.7910125704415383,2.7577244281325624,-0.03328814230897592,-1.1926905189004482
+PTS_H,target_forecast_added,woba,BF,BF+woba,secondary_single,hitter,2026 (exploratory),2026,393,315.92903266007426,312.2769686936357,-3.6520639664385612,-1.1559760543970081
+PTS_H,admitted_vs_history_target_forecast,woba,BF+woba_B0,BF+woba,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,393,314.68728814170095,312.2769686936357,-2.410319448065252,-0.7659411545660866
+PTS_H,target_forecast_added,br,BF,BF+br,secondary_single,hitter,2026 (exploratory),2026,393,315.92903266007426,316.2376007306417,0.3085680705674463,0.09767005835752106
+PTS_H,admitted_vs_history_target_forecast,br,BF+br_B0,BF+br,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,393,315.91382403270416,316.2376007306417,0.3237766979375465,0.10248892998871374
+PTS_H,target_forecast_added,fld,BF@fld,BF+fld,secondary_single,hitter,2026 (exploratory),2026,360,310.7825209519156,309.0185752294145,-1.7639457225010915,-0.5675820239497993
+PTS_H,admitted_vs_history_target_forecast,fld,BF+fld_B0,BF+fld,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,360,308.3761585552286,309.0185752294145,0.6424166741859381,0.20832241934516624
+PTS_H,target_forecast_added,hwar,BF,BF+hwar,secondary_single,hitter,2026 (exploratory),2026,393,315.92903266007426,314.3515830621541,-1.5774495979201788,-0.4993050447558725
+PTS_H,admitted_vs_history_target_forecast,hwar,BF+hwar_B0,BF+hwar,secondary_b0_vs_adm,hitter,2026 (exploratory),2026,393,314.6247327669954,314.3515830621541,-0.2731497048413303,-0.086817619975102
+PTS_H,joint_target_forecasts,woba+br+hwar,BF,BF+joint,secondary_joint,hitter,2026 (exploratory),2026,393,315.92903266007426,311.0657839157703,-4.863248744303974,-1.5393484743570924
+PTS_H,joint_admitted_vs_history,woba+br+hwar,BF+joint_B0,BF+joint,secondary_joint,hitter,2026 (exploratory),2026,393,313.98126719283556,311.0657839157703,-2.9154832770652774,-0.9285532551452175
 W,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2026 (exploratory),2026,405,3.1911775353880762,3.157377158581747,-0.03380037680632908,-1.0591819612511357
 W,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2026 (exploratory),2026,405,3.170074341772541,3.157377158581747,-0.012697183190793826,-0.4005326633347728
 W,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2026 (exploratory),2026,405,3.1911775353880762,3.1812959447807603,-0.009881590607315971,-0.30965342722977895
@@ -743,3 +833,9 @@ VAL_P,target_forecast_added,pwar,BF,BF+pwar,primary,pitcher,2026 (exploratory),2
 VAL_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2026 (exploratory),2026,405,2.839472557218932,2.8308698302739206,-0.008602726945011518,-0.30296918782118104
 VAL_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2026 (exploratory),2026,405,2.839153753866338,2.7964664038424125,-0.04268735002392532,-1.5035237160296095
 VAL_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2026 (exploratory),2026,405,2.822396038027464,2.7964664038424125,-0.025929634185051675,-0.9187099838466879
+PTS_P,target_forecast_added,fip,BF,BF+fip,secondary_single,pitcher,2026 (exploratory),2026,405,178.8133635426909,176.21726520832138,-2.5960983343695148,-1.451848051473909
+PTS_P,admitted_vs_history_target_forecast,fip,BF+fip_B0,BF+fip,secondary_b0_vs_adm,pitcher,2026 (exploratory),2026,405,177.87040034972006,176.21726520832138,-1.6531351413986783,-0.9294042955704631
+PTS_P,target_forecast_added,pwar,BF,BF+pwar,secondary_single,pitcher,2026 (exploratory),2026,405,178.8133635426909,178.6166000058486,-0.19676353684229753,-0.11003849653290657
+PTS_P,admitted_vs_history_target_forecast,pwar,BF+pwar_B0,BF+pwar,secondary_b0_vs_adm,pitcher,2026 (exploratory),2026,405,178.8762455499098,178.6166000058486,-0.25964554406121465,-0.1451537308729843
+PTS_P,joint_target_forecasts,fip+pwar,BF,BF+joint,secondary_joint,pitcher,2026 (exploratory),2026,405,178.8133635426909,176.283656571401,-2.5297069712898974,-1.4147191916592639
+PTS_P,joint_admitted_vs_history,fip+pwar,BF+joint_B0,BF+joint,secondary_joint,pitcher,2026 (exploratory),2026,405,177.9321321401727,176.283656571401,-1.6484755687717154,-0.9264631120550317

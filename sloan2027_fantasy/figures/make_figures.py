@@ -115,13 +115,13 @@ def fig2():
     s["dec"] = s.groupby("outer_year").feature_value.transform(lambda x: pd.qcut(x.rank(method="first"), 10, labels=False)) + 1
     dec = s.groupby("dec").agg(n=("change", "size"), mean_stuff=("feature_value", "mean"), mean_forecast_change=("change", "mean"),
                                share_improved=("improved", "mean")).reset_index()
-    dec.to_csv(DATA / "fig2_stuff_deciles.csv", index=False)
+    dec.to_csv(DATA / "fig5_stuff_deciles.csv", index=False)
     pl = pd.read_parquet(F.DATA / "processed/pitcher_labeled.parquet")[["mlbam_id", "season", "arm_angle"]]
     cases = {}
     for name in ("Rogers, Tyler", "Wheeler, Zack"):
         g = s[s.player == name].sort_values("outer_year").merge(pl, on=["mlbam_id", "season"], how="left")
         cases[name] = g
-    pd.concat([g.assign(case=n) for n, g in cases.items()])[["case", "season", "outer_year", "feature_value", "arm_angle", "pred_base", "pred_aug", "y", "change", "abs_err_change"]].to_csv(DATA / "fig2_cases.csv", index=False)
+    pd.concat([g.assign(case=n) for n, g in cases.items()])[["case", "season", "outer_year", "feature_value", "arm_angle", "pred_base", "pred_aug", "y", "change", "abs_err_change"]].to_csv(DATA / "fig5_cases.csv", index=False)
 
     fig = plt.figure(figsize=(6.5, 3.8))
     gs = fig.add_gridspec(2, 2, width_ratios=[1.35, 1], hspace=0.66, wspace=0.42)
@@ -169,7 +169,7 @@ def fig2():
     fig.legend(handles, labels, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.03), fontsize=6.8)
     ax2.grid(axis="y")
     ax2.set_axisbelow(True)
-    save(fig, "fig2_player_stories_stuff")
+    save(fig, "fig5_player_stories_stuff")
 
 
 # ------------------------------------------------------------------ Figure 3: six-target model comparison
@@ -240,7 +240,7 @@ def fig4():
             ("Context (role/environment)", "Context: human-specified role (park, age, playing time)", MAGENTA)]
     tab = rc.groupby(["study_id", "reason_code"]).size().unstack(fill_value=0).reindex(TARGET_ORDER).fillna(0)
     tab = tab[[c for c, _, _ in cats if c in tab.columns]]
-    tab.to_csv(DATA / "fig4_reason_codes_by_target.csv")
+    tab.to_csv(DATA / "fig2_reason_codes_by_target.csv")
     fig, ax = plt.subplots(figsize=(6.5, 2.75))
     left = np.zeros(len(tab))
     for code, lab, col in cats:
@@ -259,7 +259,7 @@ def fig4():
     ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.25), ncol=2, fontsize=6.6, handlelength=1.2, columnspacing=1.0)
     ax.grid(axis="x")
     ax.set_axisbelow(True)
-    save(fig, "fig4_classification_map")
+    save(fig, "fig2_classification_map")
 
 
 # ------------------------------------------------------------------ Figure 5: fantasy linkage matrix
@@ -279,7 +279,7 @@ def fig5():
     rows_h, rows_p = ["woba", "br", "fld", "hwar"], ["fip", "pwar"]
     rl = {"woba": "wOBA forecast", "br": "Baserunning forecast", "fld": "Fielding forecast", "hwar": "Hitter bWAR forecast",
           "fip": "FIP forecast", "pwar": "Pitcher bWAR forecast"}
-    r[["group", "target", "outcome", "delta_pct", "ci_low_pct", "ci_high_pct", "p_adjusted", "adjustment", "family", "verdict", "n_rows"]].to_csv(DATA / "fig5_fantasy_linkage.csv", index=False)
+    r[["group", "target", "outcome", "delta_pct", "ci_low_pct", "ci_high_pct", "p_adjusted", "adjustment", "family", "verdict", "n_rows"]].to_csv(DATA / "fig6_fantasy_linkage.csv", index=False)
     cmap = mpl.colors.LinearSegmentedColormap.from_list("div", ["#1c5cab", "#86b6ef", "#f0efec", "#f3a3a2", "#c23b3a"])
     norm = mpl.colors.TwoSlopeNorm(vmin=-2.0, vcenter=0.0, vmax=2.0)
     fig, axes = plt.subplots(2, 1, figsize=(6.5, 4.1), gridspec_kw={"height_ratios": [4, 2], "hspace": 0.5})
@@ -317,7 +317,7 @@ def fig5():
     cb.ax.set_xticklabels([m("-2%"), "0", "+2%"], fontsize=6.2)
     cb.outline.set_visible(False)
     cax.set_title("ΔRMSE (blue = more accurate)", fontsize=6.2, pad=2)
-    save(fig, "fig5_fantasy_linkage")
+    save(fig, "fig6_fantasy_linkage")
 
 
 # ------------------------------------------------------------------ Figure 6: illustrative draft backtest
@@ -326,9 +326,9 @@ def fig6():
     sens = pd.read_csv(F.FANTASY / "ranking_value_sensitivity.csv")
     roto = bt[(bt.format == "roto_5x5")]
     rho = roto.drop_duplicates(["group", "outcome_season"])[["group", "outcome_season", "spearman_base", "spearman_aug"]]
-    rho.to_csv(DATA / "fig6_rank_correlation.csv", index=False)
+    rho.to_csv(DATA / "fig7_rank_correlation.csv", index=False)
     s = sens[(sens.format == "roto_5x5") & sens["sample"].str.startswith("2021")]
-    s.to_csv(DATA / "fig6_topk_value.csv", index=False)
+    s.to_csv(DATA / "fig7_topk_value.csv", index=False)
     fig = plt.figure(figsize=(6.5, 4.3))
     gsp = fig.add_gridspec(2, 2, height_ratios=[1, 1.05], hspace=0.62, wspace=0.28)
     axA, axB, axC = fig.add_subplot(gsp[0, 0]), fig.add_subplot(gsp[0, 1]), fig.add_subplot(gsp[1, :])
@@ -360,7 +360,7 @@ def fig6():
     axC.grid(axis="x")
     axC.set_axisbelow(True)
     fig.text(0.01, -0.01, "* 2026 is exploratory (season already inspected for the six targets).", fontsize=6.2, color=INK2)
-    save(fig, "fig6_draft_backtest")
+    save(fig, "fig7_draft_backtest")
 
 
 # ------------------------------------------------------------------ Figure 7: year by year
@@ -381,7 +381,7 @@ def fig7():
                 rb = q.delta_rmse / (q.pct_of_b / 100)
                 rows.append({"target": sid, "season": 2026, "series": series, "delta_pct": q.pct_of_b, "ci_low_pct": 100 * q.ci_low / rb, "ci_high_pct": 100 * q.ci_high / rb})
     d = pd.DataFrame(rows)
-    d.to_csv(DATA / "fig7_year_by_year.csv", index=False)
+    d.to_csv(DATA / "fig4_year_by_year.csv", index=False)
     fig, axes = plt.subplots(2, 3, figsize=(6.5, 3.7), sharex=True)
     for ax, sid in zip(axes.flat, TARGET_ORDER):
         g = d[d.target == sid]
@@ -406,11 +406,11 @@ def fig7():
     h, l = axes[0, 0].get_legend_handles_labels()
     fig.legend(h, l, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.03))
     fig.subplots_adjust(hspace=0.45, wspace=0.35)
-    save(fig, "fig7_year_by_year")
+    save(fig, "fig4_year_by_year")
 
 
 if __name__ == "__main__":
     which = sys.argv[1:] or ["1", "2", "3", "4", "5", "6", "7"]
     for w in which:
-        {"1": fig1, "2": fig2, "3": fig3, "4": fig4, "5": fig5, "6": fig6, "7": fig7}[w]()
+        {"1": fig1, "2": fig4, "3": fig3, "4": fig7, "5": fig2, "6": fig5, "7": fig6}[w]()  # keys = manuscript figure numbers
         print("figure", w, "done", flush=True)

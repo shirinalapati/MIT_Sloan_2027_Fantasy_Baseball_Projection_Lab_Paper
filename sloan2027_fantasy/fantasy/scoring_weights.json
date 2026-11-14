@@ -1,0 +1,10 @@
+{
+  "format": "Yahoo default Head-to-Head Points (identical Season Points weights)",
+  "source": "Yahoo Help 'Default league settings for Fantasy Baseball' (research_sources.md S01) and Yahoo Fantasy Baseball 2026 guide, published 2026-02-10 (S02); both read 2026-11-13. Transcribed from fantasy/scoring_conventions.md section 1.4 without modification.",
+  "note": "Yahoo states that newly created leagues default to H2H Points; public leagues also offer H2H Categories and Rotisserie with the categories below.",
+  "batters": {"1B": 2.6, "2B": 5.2, "3B": 7.8, "HR": 10.4, "R": 1.9, "RBI": 1.9, "BB": 2.6, "SB": 4.2, "HBP": 2.6},
+  "pitchers": {"W": 8, "SV": 8, "K": 3, "ER": -3, "OUTS": 1, "BB": -1.3, "H": -1.3, "HBP": -1.3},
+  "roto_categories": {"batters": ["R", "HR", "RBI", "SB", "AVG"], "pitchers": ["W", "SV", "K", "ERA", "WHIP"]},
+  "default_roster": "C, 1B, 2B, 3B, SS, OF x3, Util x2, SP x2, RP x2, P x4 (22 active) + BN x5 + IL x4",
+  "max_teams": {"public": 10, "public_prize": 12, "private": 12}
+}
