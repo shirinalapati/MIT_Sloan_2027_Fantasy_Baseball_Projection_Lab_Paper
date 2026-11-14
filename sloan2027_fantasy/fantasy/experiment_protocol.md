@@ -185,3 +185,23 @@ This amendment adds a new-target generalization check, answering referee concern
   - If ERA-ADM ≤ TRANSFER, target-specific selection is not shown to add value beyond reusing a related target's selections.
   - If ERA-ADM beats B0 but not KS, admission is not shown to beat a broad model for ERA.
 - **No 2026 evaluation for ERA.** ERA forecasts were not frozen before the 2026 data were fetched.
+
+### Amendment 2: 2026-11-13, POST HOC analyses requested by the internal referee review (written after all results above were seen)
+These analyses respond to `audits/referee_self_review.md`. They are labelled post hoc wherever they are reported, and they do not change any primary verdict or family defined above. They are kept in a separate family, so the original Holm and BH families are unchanged.
+1. **History decomposition (six targets).** For each target and outer season 2021–2025, on identical rows:
+   - B0 versus B0 + three-year target history (`woba_w3`, `fip_w3`, `br_rv_rate_w3`, `def_rv_rate_w3`, `war_rate_w3`), fitted with the E1 ridge;
+   - ADM versus B0 + three-year history.
+2. **Season-level evidence.**
+   - Per-season ΔRMSE, with a t(4) interval and an exact sign-flip p over the five outer seasons, for the six-target ADM-versus-B0 contrasts and the eight primary fantasy linkages.
+   - Within-season ΔRMSE, after each model's season-mean residual is removed.
+3. **Who stays in the sample.** Retention in the outcome-observed sample by Stuff+ decile, with Wilson intervals on the decile "share improved", and inverse-probability-of-retention weights estimated from season-t information only.
+4. **Direct tests.**
+   - Stuff+ → strikeout *rate* (K per 9 IP, pitchers with ≥20 IP next season, weight IP);
+   - exit velocity → HR;
+   - paired raw-metric-versus-target-forecast tests: sprint speed vs baserunning forecast for SB; two-year xwOBA vs wOBA forecast for HR.
+5. **Draft-backtest scaling and league rosters.**
+   - Realized-value SDs.
+   - Overlap of the baseline and augmented top-k sets.
+   - Median rank change by rank bucket.
+   - Additional k matching Yahoo's default active roster (12 teams × 10 hitters / 8 pitchers = 120 / 96) and the NFBC Main Event (15 × 14 / 9 = 210 / 135).
+6. **Named cases chosen by rule.** For xwOBA → wOBA, sprint speed → baserunning and FIP forecast → ERA: the player-season with the largest error improvement and the one with the largest error harm.
