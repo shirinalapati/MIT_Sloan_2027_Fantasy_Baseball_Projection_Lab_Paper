@@ -1,0 +1,7 @@
+contrast,rule,player,feature_season,outcome_season,metric_value,forecast_without,forecast_with,observed,abs_error_change,unit,ip_next_season
+hitting_woba:xwoba_w2,largest improvement,"Rice, Ben",2024,2025,0.338,0.2825408677148366,0.31513365430678353,0.358,-0.03259278659194692,wOBA,
+hitting_woba:xwoba_w2,largest harm,"Kirilloff, Alex",2021,2022,0.364,0.3116148460725146,0.3428912629460121,0.286,0.03127641687349747,wOBA,
+baserunning_rv:sprint_speed,largest improvement,"Schneemann, Daniel",2024,2025,28.3,-2.44588310946494,-1.2125943457774537,1.7947279865395402,-1.2332887636874865,BR runs per 100 times on base,
+baserunning_rv:sprint_speed,largest harm,"McCutchen, Andrew",2023,2024,28.4,-1.1377196337144246,-0.02718787067534923,-1.6421461845236103,1.1105317630390754,BR runs per 100 times on base,
+fantasy: FIP forecast -> ERA,largest improvement (≥60 IP),Jose Quintana,2020,2021,,4.403140665062841,4.891213900413744,6.428571428571429,-0.4880732353509032,ERA,63.0
+fantasy: FIP forecast -> ERA,largest harm (≥60 IP),Miguel Castro,2020,2021,,3.69697898626793,4.309054418976114,3.454976303317536,0.6120754327081839,ERA,70.33333333333333

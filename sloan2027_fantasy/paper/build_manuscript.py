@@ -84,7 +84,8 @@ EQ = {
                sub(r_("ŷ"), r_("i,T")) + r_("=") + sub(r_("f"), r_("B∪") + sub(r_("S"), r_("T"))) + dl(sub(r_("x"), r_("i,T−1")))),
     "value": (sub(r_("V"), r_("i")) + r_("=") + nary("∑", r_("c∈C"), "", frac(sub(r_("x"), r_("i,c")) + r_("−") + sub(r_("μ"), r_("c")), sub(r_("σ"), r_("c")))) +
               r_(",   ") + sub(r_("x"), r_("i,AVG")) + r_("=") + sub(r_("H"), r_("i")) + r_("−") + sub(r_("AB"), r_("i")) + r_("·") + sub(r_("AVG"), r_("ref")) +
-              r_(",   ") + sub(r_("x"), r_("i,ERA")) + r_("=") + frac(sub(r_("IP"), r_("i")) + r_("·") + sub(r_("ERA"), r_("ref")), r_("9")) + r_("−") + sub(r_("ER"), r_("i"))),
+              r_(",   ") + sub(r_("x"), r_("i,ERA")) + r_("=") + frac(sub(r_("IP"), r_("i")) + r_("·") + sub(r_("ERA"), r_("ref")), r_("9")) + r_("−") + sub(r_("ER"), r_("i")) +
+              r_(",   ") + sub(r_("x"), r_("i,WHIP")) + r_("=") + sub(r_("IP"), r_("i")) + r_("·") + sub(r_("WHIP"), r_("ref")) + r_("−") + dl(sub(r_("BB"), r_("i")) + r_("+") + sub(r_("H"), r_("i")))),
 }
 
 
@@ -288,3 +289,23 @@ class Builder:
         cp.keywords = ""
         cp.subject = ""
         self.doc.save(str(path))
+        _scrub_app_xml(path)
+
+
+def _scrub_app_xml(path):
+    """Drop the template's stale page/word counts from docProps/app.xml (Word recomputes them on save)."""
+    import re as _re
+    import shutil
+    import tempfile
+    import zipfile
+    tmp = Path(tempfile.mkstemp(suffix=".docx")[1])
+    with zipfile.ZipFile(path) as zin, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if item.filename == "docProps/app.xml":
+                txt = data.decode("utf-8")
+                for tag in ("Pages", "Words", "Characters", "Lines", "Paragraphs", "CharactersWithSpaces", "TotalTime"):
+                    txt = _re.sub(rf"<{tag}>[^<]*</{tag}>", "", txt)
+                data = txt.encode("utf-8")
+            zout.writestr(item, data)
+    shutil.move(str(tmp), str(path))

@@ -6,10 +6,13 @@ from datetime import date
 from pathlib import Path
 
 SRC = Path(__file__).resolve().parents[1] / "fantasy" / "research_sources.md"
+OVERRIDE_DATE = {"S06": "n.d.; rules page for the 2027 season", "S03": "updated 2026-11-09"}
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 
 def fmt_date(s: str) -> str:
+    if s.startswith("n.d."):
+        return f"({s})"
     m = re.search(r"(\d{4})-(\d{2})-(\d{2})", s)
     if m and not s.lower().startswith(("updated", "page updated")):
         y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
@@ -28,6 +31,9 @@ def main():
         cells = [c.strip() for c in line.strip("|").split("|")]
         sid, title, author, url, pub = cells[0], cells[1], cells[2], cells[3], cells[4]
         first_url = url.split(";")[0].strip()
+        title = re.sub(r"\s*\((title per URL|URL slug:[^)]*|URL:[^)]*)\)", "", title.split(";")[0]).strip()
+        author = re.sub(r"\s*\(\d{4}\)$", "", author.split(";")[0].strip())
+        pub = OVERRIDE_DATE.get(sid, pub.split(";")[0])
         m1 = re.match(r"^([A-Z][\w'.-]+(?: [A-Z][\w'.-]+){1,2}) / ([^;]+)$", author)
         if m1 and "," not in m1.group(1):
             parts = m1.group(1).split()

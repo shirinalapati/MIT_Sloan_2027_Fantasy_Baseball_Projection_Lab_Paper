@@ -140,7 +140,10 @@ def main():
             evals.append({
                 "target": sid, "metric": r["feature"], "family": r["family"], "verdict": r["verdict"],
                 "reason_code": rc.loc[r["feature"], "reason_code"] if r["feature"] in rc.index else None,
-                "rationale": r["rationale"], "verdict_basis": basis(r["verdict"]),
+                "rationale": r["rationale"],
+                "verdict_basis": ("the target's own two-year history, a declared input of the history baseline; it was scored against a weaker current-season baseline, "
+                                  "so this Projection label is not evidence that a new metric adds information") if (r["verdict"] == "Projection" and r["feature"] in set(spec.baseline))
+                                 else basis(r["verdict"]),
                 "delta_rmse": r["oos_rmse_delta"], "delta_pct": pct(r["oos_rmse_delta"]),
                 "ci_low_pct": pct(r["oos_rmse_ci_low"]), "ci_high_pct": pct(r["oos_rmse_ci_high"]),
                 "baseline_rmse": br, "folds_improved_share": r["folds_improved"], "n_folds": r["n_folds"],

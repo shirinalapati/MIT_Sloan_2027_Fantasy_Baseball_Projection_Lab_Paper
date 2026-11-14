@@ -27,8 +27,8 @@ DATA.mkdir(exist_ok=True)
 S27 = F.PSL_ROOT / "sloan2027"
 BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = "#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"
 INK, INK2, MUTED, GRID, BASE = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
-mpl.rcParams.update({"font.family": "Arial", "font.size": 8, "axes.titlesize": 8.5, "axes.titleweight": "bold", "axes.labelsize": 8,
-                     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "legend.fontsize": 7.5, "axes.spines.top": False,
+mpl.rcParams.update({"font.family": "Arial", "font.size": 9, "axes.titlesize": 9, "axes.titleweight": "bold", "axes.labelsize": 9,
+                     "xtick.labelsize": 8.5, "ytick.labelsize": 8.5, "legend.fontsize": 8.3, "axes.spines.top": False,
                      "axes.spines.right": False, "axes.edgecolor": BASE, "axes.linewidth": 0.8, "xtick.color": INK2, "ytick.color": INK2,
                      "axes.labelcolor": INK, "text.color": INK, "grid.color": GRID, "grid.linewidth": 0.6, "savefig.dpi": 300,
                      "pdf.fonttype": 42, "svg.fonttype": "none", "axes.titlelocation": "left", "legend.frameon": False})
@@ -64,46 +64,47 @@ def fig1():
                    "folds_improved": int(round(r.folds_improved * r.n_folds)), "n_folds": int(r.n_folds), "verdict": r.verdict,
                    "reliability_r": r.reliability_pearson})
     pd.DataFrame(ex).to_csv(DATA / "fig1_sprint_speed_examples.csv", index=False)
-    fig, ax = plt.subplots(figsize=(6.5, 3.9))
+    fig, ax = plt.subplots(figsize=(6.5, 5.3))
     ax.set_xlim(0, 100)
-    ax.set_ylim(0, 60)
+    ax.set_ylim(0, 74)
     ax.axis("off")
 
     def box(x, y, w, h, title, body, edge=BLUE, dashed=False):
         ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.2,rounding_size=1.0", fc="white", ec=edge, lw=1.1,
                                     ls=(0, (3, 2)) if dashed else "solid"))
-        ax.text(x + 1.0, y + h - 1.3, title, fontsize=7.2, fontweight="bold", va="top", color=INK)
-        ax.text(x + 1.0, y + h - 4.6, body, fontsize=6.2, va="top", color=INK2, linespacing=1.3)
+        ax.text(x + 1.0, y + h - 1.2, title, fontsize=8.2, fontweight="bold", va="top", color=INK)
+        ax.text(x + 1.0, y + h - 5.0, body, fontsize=7.4, va="top", color=INK2, linespacing=1.3)
 
     def arrow(x0, y0, x1, y1):
         ax.add_patch(FancyArrowPatch((x0, y0), (x1, y1), arrowstyle="-|>", mutation_scale=8, lw=0.9, color=INK2))
 
-    y, h = 40, 18.5
-    xs = [0.5, 20.6, 40.7, 60.8, 80.9]
-    w = 18.2
-    box(xs[0], y, w, h, "1  Metric", "season-t value of a\npublic metric (e.g.,\nsprint speed, ft/s)")
-    box(xs[1], y, w, h, "2  History baseline", "ridge forecast from\nthe target's own two-\nyear history, age,\nplaying time, park")
-    box(xs[2], y, w, h, "3  Add the metric", "the same model\nwith one added\ninput")
-    box(xs[3], y, w, h, "4  Paired test", "train on earlier\nseasons only; score\nthe same players in\nt+1 (7 folds 2019–25;\nnested 2021–25)")
-    box(xs[4], y, w, h, "5  Verdict", "Projection if every\ngate passes; else a\nlabel from the\ndashed rules")
+    y, h, w = 51, 19, 18.4
+    xs = [0.5, 20.5, 40.5, 60.5, 80.5]
+    box(xs[0], y, w, h, "1  Metric", "season-t value\n(e.g., sprint\nspeed, ft/s)")
+    box(xs[1], y, w, h, "2  Baseline", "ridge on the\ntarget's two-year\nhistory, age,\nplaying time")
+    box(xs[2], y, w, h, "3  Add metric", "same model,\none added\ninput")
+    box(xs[3], y, w, h, "4  Paired test", "earlier seasons\ntrain; same\nplayers scored\nin season t+1")
+    box(xs[4], y, w, h, "5  Verdict", "Projection if all\ngates pass; else\na human-rule\nlabel")
     for i in range(4):
-        arrow(xs[i] + w + 0.3, y + h / 2, xs[i + 1] - 0.4, y + h / 2)
-    box(52.8, 16, 46.7, 19.5, "Statistical gates (all must pass for Projection)",
-        "material: RMSE falls by ≥ 0.5% of the baseline RMSE\nconsistent: ≥ 60% of folds improve, or the 95% CI is below 0\n"
-        "not redundant: survives the feature-family step\nstable: the coefficient changes sign fewer than 2 times\n"
-        "coverage ≥ 70%; no harm in most large subgroups")
-    arrow(xs[3] + w / 2, y - 0.4, xs[3] + w / 2, 35.9)
-    box(0.5, 16, 24, 19.5, "Human rule: role label", "park, environment, age and\nplaying-time inputs are\nlabelled Context whatever\ntheir lift (set in the metric\ncatalog, not learned)", edge=ORANGE, dashed=True)
-    box(25.8, 16, 25.5, 19.5, "Human rule: process flag", "after a failed test, metrics\nflagged as process measures\nbecome Diagnostic; the rest\nbecome Exclude (for this\ntarget only)", edge=ORANGE, dashed=True)
+        arrow(xs[i] + w + 0.25, y + h / 2, xs[i + 1] - 0.35, y + h / 2)
+    box(0.5, 30, 99, 17.5, "Statistical gates (all must pass for Projection)",
+        "material: RMSE falls by ≥ 0.5% of the baseline RMSE        consistent: ≥ 60% of folds improve, or CI < 0\n"
+        "not redundant: survives the greedy family step        stable: coefficient changes sign fewer than 2 times\n"
+        "coverage ≥ 70%        no material harm in at least half of the large subgroups")
+    arrow(xs[3] + w / 2, y - 0.4, xs[3] + w / 2, 47.9)
+    box(0.5, 13.5, 48.5, 13.5, "Human rule: role label", "park, environment, age and playing-time inputs\nare labelled Context whatever their lift",
+        edge=ORANGE, dashed=True)
+    box(51, 13.5, 48.5, 13.5, "Human rules: process flag and families", "failed metrics with a process flag → Diagnostic,\nothers → Exclude; families decide who competes",
+        edge=ORANGE, dashed=True)
     b, wv = ex
-    ax.text(0.5, 11.4, "Worked example: the same metric, two jobs (canonical 7-fold evaluation, outcomes 2019–2025)", fontsize=7.0, fontweight="bold")
-    ax.text(0.5, 6.9, f"Sprint speed → next-season baserunning rate:  ΔRMSE {m(format(b['delta_pct'], '+.1f'))}% of baseline RMSE; {b['folds_improved']} of {b['n_folds']} folds improved  →  {b['verdict']}",
-            fontsize=6.7, color=INK)
-    ax.text(0.5, 2.6, f"Sprint speed → next-season wOBA:  ΔRMSE {m(format(wv['delta_pct'], '+.2f'))}%; {wv['folds_improved']} of {wv['n_folds']} folds improved  →  {wv['verdict']}"
-            f"  (year-to-year r = {wv['reliability_r']:.2f}: stable, yet no added wOBA information)", fontsize=6.7, color=INK)
+    ax.text(0.5, 9.6, "Worked example: one metric, two jobs (canonical fold averages, outcomes 2019–2025)", fontsize=8, fontweight="bold")
+    ax.text(0.5, 5.4, f"Sprint speed → baserunning rate: ΔRMSE {m(format(b['delta_pct'], '+.1f'))}%, {b['folds_improved']} of {b['n_folds']} folds improved → {b['verdict']}",
+            fontsize=7.8, color=INK)
+    ax.text(0.5, 1.4, f"Sprint speed → wOBA: ΔRMSE {m(format(wv['delta_pct'], '+.2f'))}%, {wv['folds_improved']} of {wv['n_folds']} folds improved → {wv['verdict']} "
+            f"(year-to-year r = {wv['reliability_r']:.2f})", fontsize=7.8, color=INK)
     from matplotlib.lines import Line2D
     ax.legend(handles=[Line2D([], [], color=BLUE, lw=1.2, label="statistical step"), Line2D([], [], color=ORANGE, lw=1.2, ls=(0, (3, 2)), label="human-specified rule")],
-              loc="upper right", bbox_to_anchor=(1.0, 1.06), ncol=2, fontsize=6.5)
+              loc="upper right", bbox_to_anchor=(1.0, 1.05), ncol=2, fontsize=7.8)
     save(fig, "fig1_decision_flow")
 
 
@@ -123,10 +124,10 @@ def fig2():
         cases[name] = g
     pd.concat([g.assign(case=n) for n, g in cases.items()])[["case", "season", "outer_year", "feature_value", "arm_angle", "pred_base", "pred_aug", "y", "change", "abs_err_change"]].to_csv(DATA / "fig5_cases.csv", index=False)
 
-    fig = plt.figure(figsize=(6.5, 3.8))
-    gs = fig.add_gridspec(2, 2, width_ratios=[1.35, 1], hspace=0.66, wspace=0.42)
-    titles = {"Rogers, Tyler": "A  Tyler Rogers: submarine (arm angle ≈ {a:.0f}°), Stuff+ {lo:.0f}–{hi:.0f}",
-              "Wheeler, Zack": "B  Zack Wheeler: Stuff+ {lo:.0f}–{hi:.0f}"}
+    fig = plt.figure(figsize=(6.5, 4.4))
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.35, 1], hspace=0.85, wspace=0.45)
+    titles = {"Rogers, Tyler": "A  Tyler Rogers (submarine; Stuff+ {lo:.0f}–{hi:.0f})",
+              "Wheeler, Zack": "B  Zack Wheeler (Stuff+ {lo:.0f}–{hi:.0f})"}
     for i, (name, g) in enumerate(cases.items()):
         ax = fig.add_subplot(gs[i, 0])
         x = g.outer_year.to_numpy()
@@ -141,32 +142,36 @@ def fig2():
         ax.set_axisbelow(True)
         worse = int((g.abs_err_change > 0).sum())
         t = m(titles[name].format(a=g.arm_angle.mean(), lo=g.feature_value.min(), hi=g.feature_value.max()))
-        ax.set_title(t, fontsize=7.4)
+        ax.set_title(t, fontsize=8.3)
         verdict = f"Stuff+ moved all {len(g)} forecasts {'up' if g.change.mean() > 0 else 'down'} (mean {g.change.mean():+.2f} FIP); " \
                   f"{worse} of {len(g)} became less accurate"
-        ax.text(0.0, -0.36, verdict.replace("mean -", "mean \u2212"), transform=ax.transAxes, fontsize=6.6, color=INK2)
+        ax.text(0.0, -0.42, verdict.replace("mean -", "mean \u2212"), transform=ax.transAxes, fontsize=7.5, color=INK2)
         if i == 0:
             handles, labels = ax.get_legend_handles_labels()
             ax.set_ylim(2.8, 5.2)
     ax1 = fig.add_subplot(gs[0, 1])
-    ax1.bar(dec.dec, dec.mean_forecast_change, color=[ORANGE if v > 0 else BLUE for v in dec.mean_forecast_change], width=0.72)
+    ax1.bar(dec.dec, dec.mean_forecast_change, color=[MUTED if v > 0 else BLUE for v in dec.mean_forecast_change], width=0.72)
     ax1.axhline(0, color=BASE, lw=0.8)
     ax1.set_xticks(range(1, 11))
-    ax1.set_ylabel("Mean change in\nFIP forecast")
+    ax1.set_ylabel("Mean change\n(+ = worse forecast)")
     ax1.yaxis.set_major_formatter(mpl.ticker.FuncFormatter(lambda v, _: m(f"{v:+.1f}") if v else "0"))
-    ax1.set_title("C  Change by Stuff+ decile (1 = lowest)", fontsize=7.6)
+    ax1.set_title("C  Forecast change by decile", fontsize=8.5)
     ax1.grid(axis="y")
     ax1.set_axisbelow(True)
     ax2 = fig.add_subplot(gs[1, 1])
     ax2.axhline(50, color=BASE, lw=0.8, ls=(0, (3, 2)))
+    z = 1.96
+    n_ = dec.n.to_numpy(float); p_ = dec.share_improved.to_numpy(float)
+    cen = (p_ + z * z / (2 * n_)) / (1 + z * z / n_); hw = z * np.sqrt(p_ * (1 - p_) / n_ + z * z / (4 * n_ * n_)) / (1 + z * z / n_)
+    ax2.vlines(dec.dec, 100 * (cen - hw), 100 * (cen + hw), color=MUTED, lw=1.2)
     ax2.plot(dec.dec, 100 * dec.share_improved, color=INK2, lw=1.0)
     ax2.scatter(dec.dec, 100 * dec.share_improved, color=INK, s=14, zorder=3)
     ax2.set_xticks(range(1, 11))
-    ax2.set_ylim(30, 75)
+    ax2.set_ylim(25, 82)
     ax2.set_ylabel("% of forecasts\nmore accurate")
     ax2.set_xlabel("Stuff+ decile within season")
-    ax2.set_title("D  Share improved by decile", fontsize=7.6)
-    fig.legend(handles, labels, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.03), fontsize=6.8)
+    ax2.set_title("D  Share improved by decile", fontsize=8.5)
+    fig.legend(handles, labels, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.03), fontsize=7.7)
     ax2.grid(axis="y")
     ax2.set_axisbelow(True)
     save(fig, "fig5_player_stories_stuff")
@@ -196,8 +201,8 @@ def comparison_rows():
 def fig3():
     d = comparison_rows()
     d.to_csv(DATA / "fig3_model_comparisons.csv", index=False)
-    panels = [("ADM vs B0", "A  Selected vs history baseline"), ("KS vs ADM", "B  All-feature ridge vs selected"),
-              ("EN-KS vs ADM", "C  All-feature elastic net vs selected")]
+    panels = [("ADM vs B0", "A  Selected − baseline"), ("KS vs ADM", "B  All-feature ridge − selected"),
+              ("EN-KS vs ADM", "C  Elastic net − selected")]
     fig, axes = plt.subplots(1, 3, figsize=(6.5, 3.0), sharey=True)
     for ax, (key, title) in zip(axes, panels):
         g = d[d.comparison == key]
@@ -211,13 +216,11 @@ def fig3():
                 ax.plot([r.ci_low_pct, r.ci_high_pct], [yy, yy], color=col, lw=1.4 if j == 0 else 1.0, solid_capstyle="round")
                 ax.scatter([r.delta_pct], [yy], s=22, color=face, edgecolor=col, lw=1.1, zorder=3)
         ax.axvline(0, color=INK2, lw=0.8)
-        ax.set_title(title, fontsize=7.6)
+        ax.set_title(title, fontsize=8.5)
         ax.grid(axis="x")
         ax.set_axisbelow(True)
-        xmin, xmax = ax.get_xlim()
-        lim = max(abs(xmin), abs(xmax))
-        ax.set_xlim(-lim, lim)
-        ax.set_xlabel("← first-named model more accurate", fontsize=6.4, color=INK2, loc="left")
+        ax.set_xlim(-10, 10)
+        ax.set_xlabel("← selected better" if key == "ADM vs B0" else "← broad better   selected better →", fontsize=7.6, color=INK2)
     axes[0].set_yticks(range(len(TARGET_ORDER)))
     axes[0].set_yticklabels([TLABEL[s] for s in TARGET_ORDER])
     axes[0].invert_yaxis()
@@ -225,38 +228,57 @@ def fig3():
     h = [Line2D([], [], color=BLUE, marker="o", lw=1.4, label="outer years 2021–2025 (nested selection)"),
          Line2D([], [], color=ORANGE, marker="o", markerfacecolor="white", lw=1.0, label="2026 frozen-in-workflow check (exploratory)")]
     fig.legend(handles=h, loc="upper center", ncol=2, bbox_to_anchor=(0.55, 1.04))
-    fig.supxlabel("ΔRMSE as % of the second-named model's RMSE (95% player-cluster bootstrap interval)", fontsize=7.4, y=-0.06)
-    fig.subplots_adjust(wspace=0.12)
+    fig.supxlabel("ΔRMSE as % of the second-named model's RMSE (A: selected − baseline; B–C: broad − selected); 95% player-cluster intervals", fontsize=8.3, y=-0.07)
+    fig.subplots_adjust(wspace=0.2)
+    for ax in axes:
+        ax.set_xticks([-10, -5, 0, 5, 10])
+        ax.set_xticklabels(["−10", "−5", "0", "5", ""])
     save(fig, "fig3_model_comparisons")
 
 
 # ------------------------------------------------------------------ Figure 4: classification map
 def fig4():
     rc = pd.read_csv(S27 / "tables/table7_reason_codes_208.csv")
-    cats = [("Projection", "Projection (statistical pass)", BLUE),
-            ("Diagnostic — predictive alone, redundant with a kept family member", "Diagnostic: predictive alone, redundant with a kept family member", ORANGE),
+    from psl.components import studies
+    st = studies()
+    own = {"hitting_woba": {"woba_w3"}, "baserunning_rv": {"br_rv_rate_w3", "br_rv"}, "defense_rv": {"def_rv_rate_w3"}}
+
+    def cat(r):
+        if r.reason_code != "Projection":
+            return r.reason_code
+        if r.feature in set(st[r.study_id].baseline):
+            return "Projection: baseline input"
+        if r.feature in own.get(r.study_id, set()):
+            return "Projection: own-history window"
+        return "Projection: other metric"
+    rc["cat"] = rc.apply(cat, axis=1)
+    cats = [("Projection: other metric", "Projection: other metric (statistical pass)", BLUE),
+            ("Projection: own-history window", "Projection: another window of the target's own history", "#5598e7"),
+            ("Projection: baseline input", "Projection: the baseline's own two-year input", "#9ec5f4"),
+            ("Diagnostic — predictive alone, redundant with a kept family member", "Diagnostic: predictive alone, redundant within its family", ORANGE),
             ("Diagnostic — no material incremental lift", "Diagnostic: no material lift (human process flag)", AQUA),
             ("Exclude — no material incremental lift", "Exclude: no material lift, no process flag", YELLOW),
             ("Context (role/environment)", "Context: human-specified role (park, age, playing time)", MAGENTA)]
-    tab = rc.groupby(["study_id", "reason_code"]).size().unstack(fill_value=0).reindex(TARGET_ORDER).fillna(0)
+    tab = rc.groupby(["study_id", "cat"]).size().unstack(fill_value=0).reindex(TARGET_ORDER).fillna(0)
     tab = tab[[c for c, _, _ in cats if c in tab.columns]]
     tab.to_csv(DATA / "fig2_reason_codes_by_target.csv")
-    fig, ax = plt.subplots(figsize=(6.5, 2.75))
+    fig, ax = plt.subplots(figsize=(6.5, 3.4))
     left = np.zeros(len(tab))
     for code, lab, col in cats:
         v = tab[code].to_numpy() if code in tab else np.zeros(len(tab))
         ax.barh(range(len(tab)), v, left=left, color=col, edgecolor="white", lw=1.0, height=0.66, label=lab)
         for i, (l, vv) in enumerate(zip(left, v)):
-            if vv >= 2:
-                ax.text(l + vv / 2, i, f"{int(vv)}", ha="center", va="center", fontsize=6.8, color="#0b0b0b" if col in (YELLOW, AQUA, MAGENTA) else "white", fontweight="bold")
+            if vv >= 1:
+                ax.text(l + vv / 2, i, f"{int(vv)}", ha="center", va="center", fontsize=7.6,
+                        color="#0b0b0b" if col in (YELLOW, AQUA, MAGENTA, "#9ec5f4", "#5598e7") else "white", fontweight="bold")
         left += v
     for i, tot in enumerate(left):
-        ax.text(tot + 0.8, i, f"{int(tot)}", va="center", fontsize=7, color=INK2)
+        ax.text(tot + 0.8, i, f"{int(tot)}", va="center", fontsize=8, color=INK2)
     ax.set_yticks(range(len(tab)))
-    ax.set_yticklabels([TLABEL[s] for s in tab.index])
+    ax.set_yticklabels([TLABEL[s_] for s_ in tab.index])
     ax.invert_yaxis()
-    ax.set_xlabel("Number of candidate metrics evaluated for the target (208 in total; canonical 7-fold evaluation)")
-    ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.25), ncol=2, fontsize=6.6, handlelength=1.2, columnspacing=1.0)
+    ax.set_xlabel("Number of candidate metrics evaluated for the target (208 in total; canonical evaluation)")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.42, -0.2), ncol=2, fontsize=7.6, handlelength=1.2, columnspacing=1.0)
     ax.grid(axis="x")
     ax.set_axisbelow(True)
     save(fig, "fig2_classification_map")
@@ -294,9 +316,13 @@ def fig5():
                 ax.add_patch(plt.Rectangle((j, i), 1, 1, fc=cmap(norm(np.clip(c.delta_pct, -2, 2))), ec="white", lw=1.5))
                 if c.family == "primary":
                     ax.add_patch(plt.Rectangle((j + 0.04, i + 0.06), 0.92, 0.88, fill=False, ec=INK, lw=1.3))
-                txtcol = "white" if abs(c.delta_pct) > 1.3 else INK
-                ax.plot([j + 0.5], [i + 0.36], ms=6.5, color=txtcol, markeredgecolor=txtcol, markeredgewidth=1.0, **MARK[c.verdict])
-                ax.text(j + 0.5, i + 0.72, m(f"{c.delta_pct:+.1f}%"), ha="center", va="center", fontsize=6.6, color=txtcol)
+                dark = abs(c.delta_pct) > 1.3
+                txtcol = "white" if dark else INK
+                face = {"adds information": INK, "gain not robust to multiplicity": INK, "no detectable gain": "white", "harmful": INK}[c.verdict]
+                ax.plot([j + 0.5], [i + 0.36], ms=7, color=INK, markerfacecolor=face, markerfacecoloralt="white", markeredgecolor="white" if dark else INK,
+                        markeredgewidth=1.1, **MARK[c.verdict])
+                lab = m(f"{c.delta_pct:+.1f}%").replace("−0.0%", "0.0%").replace("+0.0%", "0.0%")
+                ax.text(j + 0.5, i + 0.74, lab, ha="center", va="center", fontsize=7.6, color=txtcol)
         ax.set_xlim(0, len(cols))
         ax.set_ylim(len(rows), 0)
         ax.set_xticks(np.arange(len(cols)) + 0.5)
@@ -307,16 +333,16 @@ def fig5():
         ax.tick_params(length=0)
         for sp in ax.spines.values():
             sp.set_visible(False)
-        ax.set_title(title, fontsize=7.6, pad=16)
+        ax.set_title(title, fontsize=8.5, pad=16)
     from matplotlib.lines import Line2D
-    h = [Line2D([], [], ls="none", color=INK, ms=6, label=MLAB[k], **MARK[k]) for k in MARK]
+    h = [Line2D([], [], ls="none", color=INK, ms=7, markerfacecolor={"no detectable gain": "white"}.get(k, INK), markerfacecoloralt="white", markeredgecolor=INK, label=MLAB[k], **MARK[k]) for k in MARK]
     h.append(plt.Rectangle((0, 0), 1, 1, fill=False, ec=INK, lw=1.3, label="pre-specified primary linkage (Holm, 8 tests)"))
-    fig.legend(handles=h, loc="lower left", ncol=2, bbox_to_anchor=(0.30, -0.10), fontsize=6.4, handlelength=1.2, columnspacing=1.2)
+    fig.legend(handles=h, loc="lower left", ncol=2, bbox_to_anchor=(0.30, -0.10), fontsize=7.4, handlelength=1.2, columnspacing=1.2)
     cax = fig.add_axes([0.05, -0.035, 0.18, 0.016])
     cb = mpl.colorbar.ColorbarBase(cax, cmap=cmap, norm=norm, orientation="horizontal", ticks=[-2, 0, 2])
-    cb.ax.set_xticklabels([m("-2%"), "0", "+2%"], fontsize=6.2)
+    cb.ax.set_xticklabels([m("-2%"), "0", "+2%"], fontsize=7.4)
     cb.outline.set_visible(False)
-    cax.set_title("ΔRMSE (blue = more accurate)", fontsize=6.2, pad=2)
+    cax.set_title("ΔRMSE (blue = more accurate)", fontsize=7.4, pad=2)
     save(fig, "fig6_fantasy_linkage")
 
 
@@ -332,34 +358,35 @@ def fig6():
     fig = plt.figure(figsize=(6.5, 4.3))
     gsp = fig.add_gridspec(2, 2, height_ratios=[1, 1.05], hspace=0.62, wspace=0.28)
     axA, axB, axC = fig.add_subplot(gsp[0, 0]), fig.add_subplot(gsp[0, 1]), fig.add_subplot(gsp[1, :])
-    for ax, grp, title in ((axA, "hitter", "A  Hitters: rank agreement, predicted vs realized value"), (axB, "pitcher", "B  Pitchers: same measure")):
+    for ax, grp, title in ((axA, "hitter", "A  Hitters"), (axB, "pitcher", "B  Pitchers")):
         g = rho[rho.group == grp].sort_values("outcome_season")
         ax.axvspan(2025.5, 2026.5, color="#f0efec", zorder=0, lw=0)
-        ax.plot(g.outcome_season, g.spearman_base, color=BLUE, lw=1.2, marker="o", ms=3.5, markerfacecolor="white", label="category-history baseline")
-        ax.plot(g.outcome_season, g.spearman_aug, color=ORANGE, lw=1.2, marker="o", ms=3.5, label="+ target forecasts (hitters: wOBA, baserunning, bWAR; pitchers: FIP, bWAR)")
+        ax.plot(g.outcome_season, g.spearman_base, color=MUTED, lw=1.3, ls=(0, (3, 2)), marker="o", ms=3.5, markerfacecolor="white", label="category-history baseline")
+        ax.plot(g.outcome_season, g.spearman_aug, color=INK2, lw=1.4, marker="o", ms=3.5, label="+ target forecasts")
         ax.set_xticks(list(g.outcome_season))
-        ax.set_xticklabels([str(v) if v != 2026 else "2026*" for v in g.outcome_season], fontsize=6.6)
-        ax.set_title(title, fontsize=7.4)
+        ax.set_xticklabels([str(v) if v != 2026 else "2026*" for v in g.outcome_season], fontsize=7.5)
+        ax.set_title(title, fontsize=8.3)
         ax.grid(axis="y")
         ax.set_axisbelow(True)
-    axA.set_ylabel("Spearman ρ")
-    axA.legend(loc="lower right", fontsize=6.3)
+    axA.set_ylabel("Spearman ρ, predicted\nvs realized value")
+    axA.legend(loc="upper center", bbox_to_anchor=(1.1, 1.38), ncol=2, fontsize=7.8)
     lab = []
-    ss = s.sort_values(["group", "k"]).reset_index(drop=True)
-    for i, r in ss.iterrows():
-        col = BLUE if r.group == "hitter" else ORANGE
+    dsc = pd.read_csv(F.FANTASY / "referee_checks/draft_scaling.csv").dropna(subset=["k"]).sort_values(["group", "k"]).reset_index(drop=True)
+    dsc.to_csv(DATA / "fig7_topk_value.csv", index=False)
+    for i, r in dsc.iterrows():
+        col, mk = (BLUE, "o") if r.group == "hitter" else (ORANGE, "s")
         axC.plot([r.ci_low, r.ci_high], [i, i], color=col, lw=1.3)
-        axC.scatter([r.delta_mean_realized_value], [i], color=col, s=18, zorder=3)
-        lab.append(f"{'Hitters' if r.group == 'hitter' else 'Pitchers'}: top {int(r.k)}" + (" (12-team)" if int(r.k) in (156, 108) else " (15-team)" if int(r.k) in (195, 135) else ""))
+        axC.scatter([r.delta_mean_value_per_pick], [i], color=col, s=22, marker=mk, zorder=3)
+        lab.append(f"{'Hitters' if r.group == 'hitter' else 'Pitchers'}: top {int(r.k)} ({r.league.replace('protocol k', 'protocol')})")
     axC.axvline(0, color=INK2, lw=0.8)
     axC.set_yticks(range(len(lab)))
-    axC.set_yticklabels(lab, fontsize=6.6)
+    axC.set_yticklabels(lab, fontsize=7.5)
     axC.invert_yaxis()
-    axC.set_xlabel("Difference in mean realized 5×5 value per drafted player, augmented minus baseline (z-score units; 2021–2025, 95% interval)")
-    axC.set_title("C  Did the augmented ranking pick better players? Top-k picks by predicted value", fontsize=7.4)
+    axC.set_xlabel("Mean realized 5×5 value per pick, augmented − baseline (z-units; > 0 favors augmented; value SD ≈ 3.8 hitters, 3.2 pitchers)")
+    axC.set_title("C  Did the augmented ranking pick better players? Top-k picks by predicted value", fontsize=8.3)
     axC.grid(axis="x")
     axC.set_axisbelow(True)
-    fig.text(0.01, -0.01, "* 2026 is exploratory (season already inspected for the six targets).", fontsize=6.2, color=INK2)
+    fig.text(0.01, -0.01, "* 2026 is exploratory (season already inspected for the six targets).", fontsize=7.4, color=INK2)
     save(fig, "fig7_draft_backtest")
 
 
@@ -387,7 +414,8 @@ def fig7():
         g = d[d.target == sid]
         for series, col, face in (("selected vs baseline", BLUE, BLUE), ("all-feature ridge vs selected", ORANGE, "white")):
             h = g[(g.series == series) & (g.season <= 2025)].sort_values("season")
-            ax.plot(h.season, h.delta_pct, color=col, lw=1.1, marker="o", ms=3.4, markerfacecolor=face, label=series)
+            lab = {"selected vs baseline": "selected − baseline (below 0: selection helped)", "all-feature ridge vs selected": "all-feature ridge − selected (above 0: selected better)"}[series]
+            ax.plot(h.season, h.delta_pct, color=col, lw=1.1, marker="o", ms=3.4, markerfacecolor=face, label=lab)
             q = g[(g.series == series) & (g.season == 2026)]
             if len(q):
                 q = q.iloc[0]
@@ -396,13 +424,13 @@ def fig7():
                 ax.scatter([xo], [q.delta_pct], s=18, color=face, edgecolor=col, lw=1.1, zorder=3)
         ax.axhline(0, color=INK2, lw=0.8)
         ax.axvline(2025.5, color=BASE, lw=0.8, ls=(0, (3, 2)))
-        ax.set_title(TLABEL[sid], fontsize=7.6)
+        ax.set_title(TLABEL[sid], fontsize=8.5)
         ax.set_xticks([2021, 2022, 2023, 2024, 2025, 2026])
         ax.set_xticklabels(["21", "22", "23", "24", "25", "26"])
         ax.grid(axis="y")
         ax.set_axisbelow(True)
-    fig.supylabel("ΔRMSE, % (below 0: first-named model more accurate)", fontsize=7.4, x=0.0)
-    fig.supxlabel("Outcome season (2026 shown with its 95% interval; right of the dashed line = exploratory)", fontsize=7.4, y=0.0)
+    fig.supylabel("ΔRMSE, % of the second-named model's RMSE", fontsize=8.3, x=0.0)
+    fig.supxlabel("Outcome season (2026 shown with its 95% interval; right of the dashed line = exploratory)", fontsize=8.3, y=0.0)
     h, l = axes[0, 0].get_legend_handles_labels()
     fig.legend(h, l, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.03))
     fig.subplots_adjust(hspace=0.45, wspace=0.35)

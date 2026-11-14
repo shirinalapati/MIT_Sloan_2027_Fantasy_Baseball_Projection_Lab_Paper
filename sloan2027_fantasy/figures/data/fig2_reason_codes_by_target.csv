@@ -1,7 +1,7 @@
-study_id,Projection,"Diagnostic — predictive alone, redundant with a kept family member",Diagnostic — no material incremental lift,Exclude — no material incremental lift,Context (role/environment)
-hitting_woba,4,9,30,10,9
-pitching_fip,11,17,24,7,10
-baserunning_rv,6,5,7,2,6
-defense_rv,2,0,12,4,10
-overall_war,2,0,5,2,4
-pitcher_war,2,1,0,2,5
+study_id,Projection: other metric,Projection: own-history window,Projection: baseline input,"Diagnostic — predictive alone, redundant with a kept family member",Diagnostic — no material incremental lift,Exclude — no material incremental lift,Context (role/environment)
+hitting_woba,2,1,1,9,30,10,9
+pitching_fip,10,0,1,17,24,7,10
+baserunning_rv,3,2,1,5,7,2,6
+defense_rv,0,1,1,0,12,4,10
+overall_war,1,0,1,0,5,2,4
+pitcher_war,1,0,1,1,0,2,5

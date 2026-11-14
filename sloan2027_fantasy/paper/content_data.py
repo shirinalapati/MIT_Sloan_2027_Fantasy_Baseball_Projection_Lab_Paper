@@ -152,3 +152,47 @@ _top6 = _st.nlargest(6, "absch")
 LARGEST6_WORSE = int((_top6.abs_err_change > 0).sum())
 LARGEST6_ROGERS = int((_top6.player == "Rogers, Tyler").sum())
 SRC["fc"] = "sloan2027/results/players/forecast_changes.parquet (aggregate statement only)"
+
+# ---------------- post hoc referee-check outputs (protocol Amendment 2)
+RC = FAN / "referee_checks"
+for k, f in {"hist": "history_decomposition.csv", "seas": "season_level.csv", "within": "within_season.csv", "ret": "retention_by_decile.csv",
+             "direct": "direct_tests_posthoc.csv", "draft": "draft_scaling.csv", "cases2": "named_cases.csv", "inner": "inner2017.csv", "plac2": "placebo_summary.csv"}.items():
+    SRC[k] = f"sloan2027_fantasy/fantasy/referee_checks/{f}"
+hist = pd.read_csv(RC / "history_decomposition.csv")
+seas = pd.read_csv(RC / "season_level.csv").set_index("contrast")
+within = pd.read_csv(RC / "within_season.csv").set_index("contrast")
+ret = pd.read_csv(RC / "retention_by_decile.csv").set_index("stuff_decile")
+direct = pd.read_csv(RC / "direct_tests_posthoc.csv").set_index("test")
+draft = pd.read_csv(RC / "draft_scaling.csv")
+cases2 = pd.read_csv(RC / "named_cases.csv")
+inner = pd.read_csv(RC / "inner2017.csv")
+plac2 = pd.read_csv(RC / "placebo_summary.csv").iloc[0]
+multT = pd.read_csv(S27 / "results/multiplicity/canonical_208_tests_cluster_bh.csv")
+SRC["multT"] = "sloan2027/results/multiplicity/canonical_208_tests_cluster_bh.csv"
+abl = pd.read_csv(S27 / "tables/table5_gate_ablation_threshold_sensitivity.csv")
+
+
+def HIST(sid, comp, nd=1, sec=""):
+    r = hist[(hist.study_id == sid) & (hist.comparison == comp)].iloc[0]
+    return pct(r.delta_pct, r.ci_low_pct, r.ci_high_pct, nd, SRC["hist"], sec)
+
+
+def SEAS(contrast, sec=""):
+    r = seas.loc[contrast]
+    return ev(m(f"{r['mean']:+.2f}% (t(4) interval {r.t4_low:+.2f} to {r.t4_high:+.2f})"), SRC["seas"], sec)
+
+
+def DIRECT(test, nd=2, sec=""):
+    r = direct.loc[test]
+    return pct(r.delta_pct, r.ci_low_pct, r.ci_high_pct, nd, SRC["direct"], sec)
+
+
+def POOLED(feature, sid="pitching_fip", sec=""):
+    r = multT[(multT.study_id == sid) & (multT.feature == feature)].iloc[0]
+    base = r.cluster_delta_rmse / (r.pct_of_base / 100)
+    return pct(r.pct_of_base, 100 * r.cluster_ci_low / base, 100 * r.cluster_ci_high / base, 2, SRC["multT"], sec)
+
+
+def INNER(sid, comp, nd=2, sec=""):
+    r = inner[(inner.study_id == sid) & (inner.comparison == comp)].iloc[0]
+    return pct(r.pct_of_b, r.ci_low_pct, r.ci_high_pct, nd, SRC["inner"], sec)

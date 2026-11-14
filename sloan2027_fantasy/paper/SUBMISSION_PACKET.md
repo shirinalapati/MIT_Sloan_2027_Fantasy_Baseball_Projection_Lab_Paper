@@ -13,8 +13,13 @@
 | Repository link | https://github.com/shirinalapati/MIT_Sloan_2027_Fantasy_Baseball_Projection_Lab_Paper (code, aggregate results, rebuild scripts, app). The original study is at https://github.com/shirinalapati/Projection-Signal-Lab. |
 
 ## Before submitting (author)
-1. **Open the DOCX in Microsoft Word and check the layout.** The proof (`sloan_2027_fantasy_revised_proof.pdf`) was rendered with LibreOffice and a Cambria-metric font. Equation numbers and figure and table numbers are stored in the file.
-2. **Read the paper end to end**, especially Sections 2 (six targets), 8 (fantasy) and 10 (Discussion). Check the referee self-review (`../audits/referee_self_review.md`) and how each issue was resolved.
+1. **Open the DOCX in Microsoft Word and check the layout.**
+   - The proof (`sloan_2027_fantasy_revised_proof.pdf`) was rendered with LibreOffice and a Cambria-metric font. It is 38 pages: main text pp. 1–29, appendices pp. 30–33, references pp. 34–38.
+   - The DOCX contains 7 figures, 11 tables, 5 numbered equations and 82 references. Equation, figure and table numbers are stored in the file.
+   - Word may paginate slightly differently.
+2. **Read the paper end to end**, especially:
+   - Section 2 (six targets), Section 8 (fantasy), Section 10 (Discussion) and Section 11 (Limitations);
+   - the referee self-review (`../audits/referee_self_review.md`) and how each issue was resolved (`../FINAL_REPORT.md`, Section 3).
 3. **Decide the anonymity question.** The repository URL contains the author's GitHub username, and an earlier preprint is public. The blind DOCX contains no name, affiliation or repository link. An optional organizer email draft (named; kept local) asks how to handle this.
 4. **Decide the data-rights question.** The repository has no raw MLBAM or Sports Reference data, only rebuild scripts and checksums. Sports Reference's data-use page asks for written permission before automated access, and the WAR files were downloaded programmatically. Decide whether to seek permission or to describe the rebuild as a manual download step.
 5. **Optional:** deploy the app to Vercel (see `app/README.md`) and add its URL to the form if a link field exists. Not done without your go-ahead.
